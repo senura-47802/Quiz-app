@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz App</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Select a Quiz</h1>
+    <ul class="quiz-list">
+      <% quizzes.forEach(quiz => { %>
+        <li><a href="/quiz/<%= quiz._id %>"><%= quiz.title %></a></li>
+      <% }) %>
+    </ul></div><br><br>
+        <a href="/addQuiz" style="color:white;background-color:blue;padding:20px;border-radius:20px;margin-bottom:20px;margin-left:35%">Add a New Quiz</a>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz - <%= quiz.title %></title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1><%= quiz.title %></h1>
+    <form action="/quiz/<%= quiz._id %>/score" method="POST">
+      <% quiz.questions.forEach((question, index) => { %>
+        <div class="question">
+          <p><strong>Question <%= index + 1 %>:</strong> <%= question.text %></p>
+          <% question.options.forEach((option, optionIndex) => { %>
+            <label>
+              <input type="radio" name="answers[
+                <%= index %>]" value="<%= optionIndex %>">
+                  <%= option %>
+                </label><br>
+                <% }) %>
+                </div>
+                <% }) %>
+                <button type="submit" value="submit">Submit Answers</button>
+                </form>
+                </div>
+                </body>
+                </html>

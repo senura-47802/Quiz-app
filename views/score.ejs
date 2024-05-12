@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Quiz Score</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Quiz Score</h1>
+    <h2><%= quiz.title %></h2>
+    <p>Your score: <%= score %> out of <%= quiz.questions.length %></p>
+    <% if (score === quiz.questions.length) { %>
+      <p>Excellent! You got a perfect score!</p>
+    <% } else if (score > quiz.questions.length / 2) { %>
+      <p>Good job! You did well on this quiz.</p>
+    <% } else { %>
+      <p>Don't worry, you can always try again. Keep practicing!</p>
+    <% } %>
+    <a href="/quiz/<%= quiz._id %>">Retake Quiz</a><br><br>
+    <a href="/">Back to Quizzes</a>
+  </div>
+</body>
+      <audio id="score-sound" src="/download (1).mp3"></audio> 
+      <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          const audio = document.getElementById('score-sound');
+          if (audio) {
+            audio.play();
+          }
+        });
+      </script>
+</html>
